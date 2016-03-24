@@ -5,15 +5,21 @@ Last week I started learning [Play Framework](https://www.playframework.com/) as
 
 Play Framework is not an easy framework to get started. You can very quickly get overwhelmed by its features and complexity. The goal of this tutorial is to help you build an application step by step so that you remain focussed and get most out of the Play framework.
 
-## Contributing to the Play: The Missing Tutorial &trade;
+## Application
 
-Please contribute if you see an error or something that could be better! Raise an [issue](https://github.com/shekhargulati/play-the-missing-tutorial/issues) or send me a pull request to improve. Contributions of all kinds, including corrections, additions, improvements, and translations, are welcome!
+In this tutorial, we will build a blogging platform called `blogy` that you can use to write and publish blogs. To build this web application, we will cover following topics:
 
 ## Table of Contents
+
+These are some of the topics I will cover as we make progress with this project:
 
 * [Part 1: Hello World!](./01-hello-world.md)
 * [Part 2: Templates](./02-templates.md)
 * [Part 3: Web Forms](./03-forms.md)
+
+## Contributing to the Play: The Missing Tutorial &trade;
+
+Please contribute if you see an error or something that could be better! Raise an [issue](https://github.com/shekhargulati/play-the-missing-tutorial/issues) or send me a pull request to improve. Contributions of all kinds, including corrections, additions, improvements, and translations, are welcome!
 
 -----------
 You can follow me on twitter at [https://twitter.com/shekhargulati](https://twitter.com/shekhargulati) or email me at <shekhargulati84@gmail.com>. Also, you can read my blogs at [http://shekhargulati.com/](http://shekhargulati.com/)
