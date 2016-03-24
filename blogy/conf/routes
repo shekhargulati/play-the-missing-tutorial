@@ -1,0 +1,7 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+GET     /            controllers.IndexController.index()
+GET     /index       controllers.IndexController.index()
