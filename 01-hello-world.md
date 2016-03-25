@@ -23,7 +23,7 @@ To work along with this tutorial, you will need following installed on your mach
 
 ## Github repository
 
-The code for demo application is available on github: [blogy](./blogy).
+The code for demo application is available on github: [blogy](./blogy). You should get the `part-01` release. If you are not comfortable with Git, then you can directly download the [part-01.zip](https://github.com/shekhargulati/play-the-missing-tutorial/archive/part-01.zip).
 
 ## Getting started with Play framework
 
