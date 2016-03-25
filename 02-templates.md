@@ -228,6 +228,6 @@ We will update `index.scala.html` to use the base layout.
 
 ---
 
-That's it for the first part of Play framework. If you have any feedback then you can add a comment to this Github issue [https://github.com/shekhargulati/play-the-missing-tutorial/issues/1](https://github.com/shekhargulati/play-the-missing-tutorial/issues/1).
+That's it for the second part of Play framework tutorial. If you have any feedback then you can add a comment to this Github issue [https://github.com/shekhargulati/play-the-missing-tutorial/issues/1](https://github.com/shekhargulati/play-the-missing-tutorial/issues/1).
 
 [![Analytics](https://ga-beacon.appspot.com/UA-59411913-4/shekhargulati/play-the-missing-tutorial/02-templates)](https://github.com/igrigorik/ga-beacon)
