@@ -1,0 +1,11 @@
+@(title: String, user: Map[String, String], posts: List[Map[String, String]])
+@layout(title) {
+    @if(user.get("username").isDefined){
+        <h1>Hello, @user.get("username").get!</h1>
+    }else{
+        <h1>Hello, Guest!</h1>
+    }
+    @for(post <- posts){
+        <div><p>@post.getOrElse("author","Guest") says: <b>@post.getOrElse("body","Hello!")</b></p></div>
+    }
+}

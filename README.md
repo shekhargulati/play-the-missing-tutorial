@@ -16,6 +16,7 @@ In this tutorial, we will build a blogging platform called `blogy` that you can 
 These are some of the topics I will cover as we make progress with this project:
 
 * [Part 1: Hello World!](./01-hello-world.md)
+* [Part 2: Templates](./02-templates.md)
 
 ## Contributing to the Play: The Missing Tutorial &trade;
 
