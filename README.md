@@ -9,7 +9,7 @@ Play Framework is not an easy framework to get started. You can very quickly get
 
 ## Application
 
-In this tutorial, we will build a blogging platform called `blogy` that you can use to write and publish blogs. To build this web application, we will cover following topics:
+In this tutorial, we will build a blogging platform called `blogy` that you can use to write and publish blogs. To build this web application, we will cover topics mentioned below.
 
 ## Table of Contents
 
