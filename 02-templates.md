@@ -1,7 +1,6 @@
-Play Scala Templates
----
+# Play Scala Templates
 
-In the [previous chapter](./01-hello-world.md), we created a basic Play Scala application that renders `Hello, World!` when a Http GET request is made to index `\`. You can run the application by executing `sbt run` command from inside the application root directory.
+In the [previous chapter](./01-hello-world.md), we created a basic Play Scala application that renders `Hello, World!` when a HTTP GET request is made to index `/`. You can run the application by executing `sbt run` command from inside the application root directory.
 
 We will start this chapter from where we left in last chapter, so you may want to make sure you have the above application correctly installed and working.
 
@@ -18,9 +17,10 @@ One way to render HTML would be to return the HTML in the response body as shown
 ```scala
 package controllers
 
+import javax.inject._
 import play.api.mvc._
 
-class IndexController extends Controller {
+class IndexController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
   def index() = Action {
     val user = Map("username" -> "shekhargulati")
@@ -41,7 +41,7 @@ class IndexController extends Controller {
 }
 ```
 
-In the code shown above, we modified the `index` method to return HTML in the response body. `Ok` is factory method to produce `Result`. `Result` is value object which defines the response header and a body ready to send to the client. We set the `Content-Type` to `text/html` using the `as` method so that browser render it as html.
+In the code shown above, we modified the `index` method to return HTML in the response body. `Ok` is factory method to produce `Result`. `Result` is value object which defines the response header and a body ready to send to the client. We set the `Content-Type` to `text/html` using the `as` method so that browser render it as HTML.
 
 Go to [http://localhost:9000/](http://localhost:9000/) to see how it looks in your browser.
 
@@ -51,18 +51,19 @@ The approach we have taken above is a quick and easy hack to render HTML but it 
 
 Template allows you to separate presentation concern from the rest of the application. This makes it easy for UI designers to work independently on the user interface concern without being bothered by the application source code.
 
-Play comes bundled with Twirl, a powerful Scala based template engine.
+Play comes bundled with [Twirl](https://github.com/playframework/twirl), a powerful Scala based template engine.
 
 Let's write our first template. Templates are created inside the `application/views` directory. Create new file `index.scala.html` and populate it with following content.
 
 ```html
 @(title: String, user: Map[String, String])
+
 <html>
 <head>
     <title>@title</title>
 </head>
 <body>
-    <h1>Hello, @user.getOrElse("username","guest")!</h1>
+    <h1>Hello, @user.getOrElse("username", "guest")!</h1>
 </body>
 </html>
 ```
@@ -78,11 +79,12 @@ Now, let's see how we can use the template defined above in our controller.
 ```scala
 package controllers
 
+import javax.inject._
 import play.api.mvc._
 
-class IndexController extends Controller {
+class IndexController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  def index() = Action {
+  def index = Action {
     val user = Map("username" -> "shekhargulati")
     Ok(views.html.index("Welcome to Blogy", user))
   }
@@ -122,7 +124,7 @@ Twirl templates have support for control statements. Let's add an if statement t
 <body>
     @if(user.get("username").isDefined){
         <h1>Hello, @user.get("username").get!</h1>
-    }else{
+    } else {
         <h1>Hello, Guest!</h1>
     }
 </body>
@@ -131,7 +133,7 @@ Twirl templates have support for control statements. Let's add an if statement t
 
 Feel free to test it by removing username from the Map to see control statement in action.
 
-## Iteration in templates
+## Iterating in templates
 
 The logged in user in our `blogy` application will probably want to see recent posts from followed users in the home page, so let's see how we can do that.
 
@@ -147,10 +149,12 @@ class IndexController extends Controller {
   def index() = Action {
     val user = Map("username" -> "shekhargulati")
     val posts = List(
-      Map("author" -> "Shekhar",
+      Map(
+        "author" -> "Shekhar",
         "body" -> "Getting started with Play"
       ),
-      Map("author" -> "Rahul",
+      Map(
+        "author" -> "Rahul",
         "body" -> "Getting started with Docker"
       )
     )
@@ -171,12 +175,12 @@ Let's update our template to add `posts` as its parameter.  To iterate over list
     <title>@title</title>
 </head>
 <body>
-    @if(user.get("username").isDefined){
+    @if(user.get("username").isDefined) {
         <h1>Hello, @user.get("username").get!</h1>
-    }else{
+    } else {
         <h1>Hello, Guest!</h1>
     }
-    @for(post <- posts){
+    @for(post <- posts) {
         <div><p>@post.getOrElse("author","Guest") says: <b>@post.getOrElse("body","Hello!")</b></p></div>
     }
 </body>

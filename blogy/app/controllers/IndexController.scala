@@ -4,7 +4,7 @@ import play.api.mvc._
 
 class IndexController extends Controller {
 
-  def index() = Action {
+  def index = Action {
     val user = Map("username" -> "shekhargulati")
     val posts = List(
       Map("author" -> "Shekhar",
