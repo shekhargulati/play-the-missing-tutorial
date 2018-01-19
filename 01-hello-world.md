@@ -1,7 +1,7 @@
 # Let's say Hello World! with Play Framework
 
 
-[Play framework](https://www.playframework.com/) is a MVC style web application framework for JVM built using Scala, Akka, and Netty. It provides API for both Java and Scala programming languages. You can use it to build either your traditional web applications with server side rendering or modern [sigle-page application (SPA)](https://en.wikipedia.org/wiki/Single-page_application) that uses REST with JavaScript MVC framework like AngularJS. One design decision that makes Play different from other Java/Scala MVC web frameworks is that it is not built on top of the Servlet standard. It is full stack Java framework that runs your application stand-alone. **Play is a framework not a library**.
+[Play framework](https://www.playframework.com/) is a MVC style web application framework for JVM built using Scala, Akka, and Netty. It provides API for both Java and Scala programming languages. You can use it to build either your traditional web applications with server side rendering or modern [single-page application (SPA)](https://en.wikipedia.org/wiki/Single-page_application) that uses REST with JavaScript MVC framework like AngularJS. One design decision that makes Play different from other Java/Scala MVC web frameworks is that it is not built on top of the Servlet standard. It is full stack Java framework that runs your application stand-alone. **Play is a framework not a library**.
 
 ## Application
 
@@ -43,7 +43,7 @@ $ sbt new playframework/play-java-seed.g8
 
 For Java based projects.
 
-Both templates above generates minimum projects so that you can get (almost) only the basic project structure. But you can also create the project manually if you think it is less intimidating and easier to understand.
+Both templates above generate minimum projects so that you can get (almost) only the basic project structure. But you can also create the project manually if you think it is less intimidating and easier to understand.
 
 ### Manually creating the project
 
@@ -93,7 +93,7 @@ addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.3")
 
 This is one required SBT plugin that we will need in our project. There are many more plugins like `sbt-coffeescript`, `sbt-less`, `sbt-scalariform`, etc that we can add for adding different capabilities to our project. We will add few more plugins later in this series.
 
-It is a good practice in SBT projects to lock down the version of SBT. By default, the installed version of SBT will be used by the application. This might cause compatibility issues if future version of SBT becomes incompatible with Play. To force a SBT version, create a new file `build.properties` inside the `project` directory and add following line to it.
+It is a good practice in SBT projects to lock down the version of SBT. By default, the installed version of SBT will be used by the application. This might cause compatibility issues if the future version of SBT becomes incompatible with Play. To force a SBT version, create a new file `build.properties` inside the `project` directory and add the following line to it.
 
 ```
 sbt.version=0.13.16
@@ -218,7 +218,7 @@ Content-Length: 12
 Hello, World
 ```
 
-You can map multiple URL to same action by defining the route configuration for new URL. Let's suppose we want to map both `/` and `/index` to the same controller then we can update our `routes` file as shown below.
+You can map multiple URLs to the same action by defining the route configuration for new URL. Let's suppose we want to map both `/` and `/index` to the same controller then we can update our `routes` file as shown below.
 
 ```
 GET     /            controllers.IndexController.index()
