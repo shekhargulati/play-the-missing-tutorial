@@ -53,7 +53,7 @@ Template allows you to separate presentation concern from the rest of the applic
 
 Play comes bundled with [Twirl](https://github.com/playframework/twirl), a powerful Scala based template engine.
 
-Let's write our first template. Templates are created inside the `application/views` directory. Create new file `index.scala.html` and populate it with following content.
+Let's write our first template. Templates are typically created inside the `app/views` directory. Create a new folder called `views`, a new file in the newly created `views` folder called `index.scala.html`, and populate it with following content.
 
 ```html
 @(title: String, user: Map[String, String])
@@ -68,7 +68,7 @@ Let's write our first template. Templates are created inside the `application/vi
 </html>
 ```
 
-As you case see above, we mostly wrote a standard HTML page with some placeholders marked with `@` for dynamic content. Every time Twirl template engine encounters `@` character, it indicates the beginning of a dynamic statement. If you have used other templates engines like mustache or jinja then you would have used placeholders like `{{}}`. The statement after `@` is valid Scala code as you can see from `@user.getOrElse("username","guest")`. We are calling `getOrElse` function of `Map`.
+As you case see above, we wrote a mostly standard HTML page with some placeholders marked with `@` for dynamic content. Every time Twirl template engine encounters `@` character, it indicates the beginning of a dynamic statement. If you have used other templates engines like mustache or jinja then you would have used placeholders like `{{}}`. The statement after `@` is valid Scala code as you can see from `@user.getOrElse("username","guest")`. We are calling `getOrElse` function of `Map`.
 
 > **Because @ is a special character, you’ll sometimes need to escape it. Do this by using @@.**
 
