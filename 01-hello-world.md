@@ -83,7 +83,7 @@ The build file shown above does the following:
 1. It specified name of the project as `blogy`.
 2. Then, we specified version of the project as `1.0.0-SNAPSHOT`.
 3. Next, it enables `PlayScala` plugin for `blogy` project. Later, we will add Play SBT plugin to the `blogy` application.
-4. Finally, we set Scala version to `2.11.7`.
+4. Finally, we set Scala version to `2.12.3`.
 
 Now, we will add Play Scala plugin to our project so that it is treated as a Play application. In SBT, you declare plugins you need in your project by adding them to `plugins.sbt` file inside the `project` directory. Create a new file `plugins.sbt` inside the project directory and populate it with following contents.
 
